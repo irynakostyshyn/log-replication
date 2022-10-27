@@ -32,7 +32,7 @@ class Application(web.Application):
 class MessageServicer(MessageReplicationServicer):
     def AppendMessage(self, request, context):
         messages = {"id": request.id, "message_text": request.message_text,
-                    "created_at": {"seconds": request.created_at.seconds, "nanos": request.nanos}}
+                    "created_at": {"seconds": request.created_at.seconds, "nanos": request.created_at.nanos}}
         print('got messages')
 
         message_list.append(messages)
